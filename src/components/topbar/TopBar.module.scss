@@ -1,15 +1,16 @@
 .topbar {
-	height: 2.75em;
+	height: 44px;
 	display: flex;
 	border-bottom: 1px solid var(--surface-border);
 }
 
 .buttons {
 	height: 100%;
-	padding: 0.625em;
+	padding: 0 10px;
 	display: flex;
+	justify-content: center;
 
 	div {
-		margin: 0 0.625em;
+		margin: 0 10px;
 	}
 }
