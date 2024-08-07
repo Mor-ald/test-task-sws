@@ -1,0 +1,18 @@
+.project-menu {
+	padding: 10px 7px 10px 20px;
+	min-width: 207px;
+	max-width: 207px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-right: 1px solid var(--surface-border);
+}
+
+.project-name {
+	display: flex;
+	flex-direction: column;
+
+	:last-child {
+		font-size: 10px;
+	}
+}
