@@ -1,5 +1,11 @@
+import { TopBar } from "./components/components";
+
 function App() {
-	return <></>;
+	return (
+		<>
+			<TopBar />
+		</>
+	);
 }
 
 export default App;
