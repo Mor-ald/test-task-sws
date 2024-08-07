@@ -10,13 +10,23 @@
 	--text-secondary-color: #ffffff;
 }
 
+#root {
+	height: 100vh;
+}
+
 html,
 body {
 	margin: 0;
 	padding: 0;
+	height: 100vh;
 	background-color: var(--surface-ground);
 	color: var(--text-primary-color);
 	font-family: "Roboto", sans-serif;
 	font-size: 14px;
 	overflow: hidden;
+}
+
+.container {
+	height: 100%;
+	display: flex;
 }
