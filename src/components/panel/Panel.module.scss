@@ -1,0 +1,9 @@
+.panel {
+	padding: 0 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	color: var(--text-secondary-color);
+	border-right: 1px solid var(--surface-border);
+}
