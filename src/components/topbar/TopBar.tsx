@@ -1,5 +1,6 @@
 import { IconsNames } from "../../ts/enums/IconsNames";
-import { Button } from "../components";
+import tabItems from "../../utils/tabItems";
+import { Button, TabMenu } from "../components";
 import styles from "./TopBar.module.scss";
 
 /**
@@ -12,6 +13,9 @@ export default function TopBar() {
 				<div className={styles.buttons}>
 					<Button iconName={IconsNames.Bar} />
 					<Button iconName={IconsNames.ShareArrow} />
+				</div>
+				<div className={styles.tabs}>
+					<TabMenu tabs={tabItems} />
 				</div>
 			</div>
 		</>
