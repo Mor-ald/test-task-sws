@@ -1,9 +1,10 @@
-import { TopBar } from "./components/components";
+import { MiddleBar, TopBar } from "./components/components";
 
 function App() {
 	return (
 		<>
 			<TopBar />
+			<MiddleBar />
 		</>
 	);
 }
