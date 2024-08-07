@@ -1,0 +1,15 @@
+.topbar {
+	height: 2.75em;
+	display: flex;
+	border-bottom: 1px solid var(--surface-border);
+}
+
+.buttons {
+	height: 100%;
+	padding: 0.625em;
+	display: flex;
+
+	div {
+		margin: 0 0.625em;
+	}
+}
