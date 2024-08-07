@@ -1,0 +1,26 @@
+.nav-item,
+.nav-item-active {
+	padding: 5px 7px 5px 20px;
+	display: flex;
+	align-items: center;
+	transition: all 0.2s ease;
+	cursor: pointer;
+
+	span {
+		margin-left: 14px;
+		color: var(--text-secondary-color);
+	}
+}
+
+.nav-item-active {
+	background-color: var(--surface-active);
+}
+
+.nav-item:hover {
+	background-color: var(--surface-border);
+	opacity: 0.75;
+}
+
+.nav-item-active:hover {
+	opacity: 0.85;
+}
