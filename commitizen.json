@@ -15,13 +15,9 @@
   "scopes": [
     { "name": "components" },
     { "name": "lib" },
-    { "name": "guides" },
-    { "name": "materials" },
+    { "name": "utils" },
     { "name": "pages" },
-    { "name": "paths" },
-    { "name": "stores" },
     { "name": "services" },
-    { "name": "templates" },
     { "name": "ts" },
     { "name": "global" }
   ],
