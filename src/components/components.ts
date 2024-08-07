@@ -7,5 +7,6 @@ import ProjectMenu from "./projectmenu/ProjectMenu";
 import TabMenu from "./tabmenu/TabMenu";
 import TopBar from "./topbar/TopBar";
 import TreeTable from "./treetable/TreeTable";
+import MiddleBar from "./middlebar/MiddleBar";
 
-export { Button, InputNumber, InputText, Navbar, PanelsBar, ProjectMenu, TabMenu, TopBar, TreeTable };
+export { Button, InputNumber, InputText, Navbar, PanelsBar, ProjectMenu, TabMenu, TopBar, TreeTable, MiddleBar };
