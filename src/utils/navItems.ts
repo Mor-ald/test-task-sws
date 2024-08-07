@@ -1,0 +1,17 @@
+export default [
+	{ navIconPath: "../assets/nav-object.svg", navName: "По проекту" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "Объекты" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "РД" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "МТО" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "СМР" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "ГРАФИК" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "МиМ" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "Рабочие" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "Капвложения" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "Бюджет" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "Финансирование" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "Панорамы" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "Камеры" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "Поручения" },
+	{ navIconPath: "../assets/nav-object.svg", navName: "Контрагенты" },
+];

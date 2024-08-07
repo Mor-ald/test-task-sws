@@ -1,0 +1,11 @@
+:root {
+	--surface-ground: #27272a;
+	--surface-section: #202124;
+	--surface-border: #414144;
+	--surface-line: #c6c6c6;
+	--surface-active: #a1a1aa;
+	--surface-outline: #7890b2;
+
+	--text-primary-color: #a1a1aa;
+	--text-secondary-color: #ffffff;
+}
