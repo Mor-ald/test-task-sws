@@ -1,4 +1,5 @@
 import { MiddleBar, Navbar, TopBar } from "./components/components";
+import Ciw from "./pages/ciw/Ciw";
 
 function App() {
 	return (
@@ -8,6 +9,7 @@ function App() {
 
 			<div className="container">
 				<Navbar />
+				<Ciw />
 			</div>
 		</>
 	);
