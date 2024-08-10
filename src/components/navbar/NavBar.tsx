@@ -16,7 +16,6 @@ export default function Navbar() {
 			const newNavs = [...navs.map((nav) => ({ active: false, navIconName: nav.navIconName as IconsNames, navName: nav.navName }))];
 
 			newNavs.find((nav) => nav.navName === navName)!.active = true;
-			console.log(newNavs);
 			setNavs(newNavs);
 		},
 		[navs, setNavs],
