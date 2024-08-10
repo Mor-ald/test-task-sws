@@ -15,7 +15,20 @@ export default function convertToNodes(data: ApiCiwData, parentKey: string | nul
 			key,
 			editMode: false,
 			parentId: parentId,
-			data: { ...item },
+			data: {
+				id: item.id,
+				equipmentCosts: item.equipmentCosts,
+				estimatedProfit: item.estimatedProfit,
+				machineOperatorSalary: item.machineOperatorSalary,
+				mainCosts: item.mainCosts,
+				materials: item.materials,
+				mimExploitation: item.mimExploitation,
+				overheads: item.overheads,
+				rowName: item.rowName,
+				salary: item.salary,
+				supportCosts: item.supportCosts,
+				total: item.total,
+			},
 			children: item.child.length > 0 ? convertToNodes(item.child, key, item.id) : [],
 		};
 
