@@ -15,7 +15,7 @@ export default function NavItem(props: INavItem) {
 	return (
 		<>
 			<div className={props.active ? styles["nav-item-active"] : styles["nav-item"]} onClick={() => props.setActiveNav(props.navName)}>
-				<img src={`../../../public/${props.navIconName}.svg`} alt="nav-icon" />
+				<img src={`/${props.navIconName}.svg`} alt="nav-icon" />
 				<span>{props.navName}</span>
 			</div>
 		</>
