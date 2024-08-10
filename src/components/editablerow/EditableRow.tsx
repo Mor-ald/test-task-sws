@@ -8,7 +8,7 @@ import { IEditableRow } from "./EditableRow.types";
 /**
  * Editable row of tree table component
  */
-export default function EditableRow({ linesClassName, nestingLvl, node, children, onSendCreatedRow, onSendEditedRow }: IEditableRow) {
+export default function EditableRow({ qRowsWithLessNesting, linesClassName, nestingLvl, node, children, onSendCreatedRow, onSendEditedRow }: IEditableRow) {
 	const [formData, setFormData] = useState({
 		rowName: node.data.rowName,
 		salary: `${node.data.salary}`,
@@ -38,6 +38,19 @@ export default function EditableRow({ linesClassName, nestingLvl, node, children
 
 	return (
 		<>
+			{qRowsWithLessNesting > 0 && (
+				<div className={styles["vertical-add-line-container"]}>
+					<div
+						className={styles["vertical-add-line"]}
+						style={{
+							marginLeft: `${nestingLvl * 22}px`,
+							left: `${3}px`,
+							top: `${-45 - 60 * qRowsWithLessNesting}px`,
+							height: `${65 * qRowsWithLessNesting}px`,
+						}}
+					></div>
+				</div>
+			)}
 			<tr className={styles["row"]}>
 				<td className={styles["lvl-col"]} style={{ minWidth: `${55 + 22 * nestingLvl}px` }}>
 					<div className={styles[linesClassName]} style={{ marginLeft: `${nestingLvl * 22}px` }}></div>
