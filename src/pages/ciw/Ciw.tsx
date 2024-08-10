@@ -91,20 +91,26 @@ export default function Ciw() {
 		setNodes(newNodes);
 	}, []);
 
-	const onCreateNewRow = useCallback(async (data: CiwCreateData) => {
-		await createData(data);
-		refreshNodes();
-	}, []);
+	const onCreateNewRow = useCallback(
+		async (data: CiwCreateData, keyOfNode: string) => {
+			await createData(data, nodes, keyOfNode).then(() => refreshNodes());
+		},
+		[nodes],
+	);
 
-	const onUpdateRow = useCallback(async (data: CiwUpdateData) => {
-		await updateData(data);
-		refreshNodes();
-	}, []);
+	const onUpdateRow = useCallback(
+		async (data: CiwUpdateData, keyOfNode: string) => {
+			await updateData(data, nodes, keyOfNode).then(() => refreshNodes());
+		},
+		[nodes],
+	);
 
-	const onDeleteRow = useCallback(async (id: number) => {
-		await deleteData(id);
-		refreshNodes();
-	}, []);
+	const onDeleteRow = useCallback(
+		async (id: number) => {
+			await deleteData(id, nodes).then(() => refreshNodes());
+		},
+		[nodes],
+	);
 
 	useEffect(() => {
 		loadData().then((res) => {
