@@ -1,15 +1,21 @@
-import { useState } from "react";
-
 import styles from "./TreeTable.module.scss";
 
 import { TreeRows } from "../treerows/TreeRows";
+import { TreeNode } from "../../ts/TreeNode";
+import { CiwCreateData, CiwUpdateData } from "../../ts/ApiData";
+
+type ITreeTable = {
+	nodes: TreeNode[];
+	onAddChildRow: (id: number) => void;
+	onCreateNewRow: (data: CiwCreateData) => void;
+	onUpdateRow: (data: CiwUpdateData) => void;
+	onDeleteRow: (id: number) => void;
+};
 
 /**
  * TreeTable component
  */
-export default function TreeTable() {
-	const [nodes, setNodes] = useState([]);
-
+export default function TreeTable({ nodes, onAddChildRow, onCreateNewRow, onUpdateRow, onDeleteRow }: ITreeTable) {
 	return (
 		<>
 			<table className={styles["tree-table"]}>
@@ -24,7 +30,7 @@ export default function TreeTable() {
 					</tr>
 				</thead>
 				<tbody>
-					<TreeRows nodes={nodes} />
+					<TreeRows nodes={nodes} onCreateNewRow={onCreateNewRow} onAddChildRow={onAddChildRow} onUpdateRow={onUpdateRow} onDeleteRow={onDeleteRow} />
 				</tbody>
 			</table>
 		</>
