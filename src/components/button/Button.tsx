@@ -13,7 +13,7 @@ export default function Button(props: IButton) {
 	return (
 		<>
 			<div className={styles.button} onClick={props.onClick}>
-				<img src={`../../../public/${props.iconName}.svg`} alt="icon" />
+				<img src={`/${props.iconName}.svg`} alt="icon" />
 			</div>
 		</>
 	);
