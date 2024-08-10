@@ -12,6 +12,16 @@
 	min-width: 85px;
 }
 
+.vertical-add-line-container {
+	position: relative;
+}
+
+.vertical-add-line {
+	position: absolute;
+	width: 1px;
+	background-color: var(--surface-line);
+}
+
 .lines,
 .lines-long {
 	position: relative;
