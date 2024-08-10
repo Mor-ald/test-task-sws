@@ -7,8 +7,8 @@ import { CiwCreateData, CiwUpdateData } from "../../ts/ApiData";
 type ITreeTable = {
 	nodes: TreeNode[];
 	onAddChildRow: (id: number) => void;
-	onCreateNewRow: (data: CiwCreateData) => void;
-	onUpdateRow: (data: CiwUpdateData) => void;
+	onCreateNewRow: (data: CiwCreateData, key: string) => void;
+	onUpdateRow: (data: CiwUpdateData, key: string) => void;
 	onDeleteRow: (id: number) => void;
 };
 
