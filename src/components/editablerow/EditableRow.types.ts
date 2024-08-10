@@ -1,6 +1,7 @@
 import { TreeNode } from "../../ts/TreeNode";
 
 export type IEditableRow = {
+	qRowsWithLessNesting: number;
 	linesClassName: "" | "lines" | "lines-long";
 	nestingLvl: number;
 	node: TreeNode;

@@ -1,4 +1,5 @@
 export type IDefaultRow = {
+	qRowsWithLessNesting: number;
 	linesClassName: "" | "lines" | "lines-long";
 	nestingLvl: number;
 	rowName: string;
