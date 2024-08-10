@@ -1,0 +1,26 @@
+.input-text,
+.input-number {
+	padding: 10px;
+	border: 1px solid var(--surface-border);
+	border-radius: 6px;
+	background-color: var(--surface-section);
+	outline: none;
+	color: var(--text-secondary-color);
+	transition: all 0.2s ease;
+}
+
+.input-text {
+	width: 711px;
+}
+
+.input-number {
+	width: 154px;
+}
+
+.input-text:focus {
+	border: 1px solid var(--surface-outline);
+}
+
+.input-number:focus {
+	border: 1px solid var(--surface-outline);
+}
