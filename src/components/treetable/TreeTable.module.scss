@@ -1,11 +1,13 @@
 table {
 	display: block;
 	border-collapse: collapse;
-	min-width: 1681px;
+	min-width: 1662px;
 	min-height: 988px;
+	overflow-x: auto;
 }
 
 thead {
+	width: 100%;
 	border-bottom: 1px solid var(--surface-border);
 }
 
@@ -38,8 +40,12 @@ tbody > tr > td:first-child {
 	padding: 18px 0 18px 11px;
 }
 
+.lvl-col {
+	min-width: 86px;
+}
+
 .work-col {
-	min-width: 733px;
+	min-width: 716px;
 }
 
 .salary-col,
