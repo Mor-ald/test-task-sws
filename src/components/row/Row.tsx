@@ -8,7 +8,7 @@ import { IRow } from "./Row.types";
 /**
  * Row component
  */
-export function Row({ node, onCreateNewRow, onAddChildRow, onUpdateRow, onDeleteRow }: IRow) {
+export function Row({ qRowsWithLessNesting, node, onCreateNewRow, onAddChildRow, onUpdateRow, onDeleteRow }: IRow) {
 	const [visible, setVisible] = useState(false);
 	const [editMode, setEditMode] = useState(node.editMode);
 
@@ -36,7 +36,7 @@ export function Row({ node, onCreateNewRow, onAddChildRow, onUpdateRow, onDelete
 				supportCosts: 0,
 			};
 
-			onCreateNewRow(data);
+			onCreateNewRow(data, node.key);
 		},
 		[onCreateNewRow, convertToNumber],
 	);
@@ -60,7 +60,7 @@ export function Row({ node, onCreateNewRow, onAddChildRow, onUpdateRow, onDelete
 
 			setEditMode(false);
 
-			onUpdateRow(data);
+			onUpdateRow(data, node.key);
 		},
 		[onCreateNewRow, convertToNumber],
 	);
@@ -80,6 +80,7 @@ export function Row({ node, onCreateNewRow, onAddChildRow, onUpdateRow, onDelete
 			{!editMode && (
 				<>
 					<DefaultRow
+						qRowsWithLessNesting={qRowsWithLessNesting}
 						linesClassName={linesClassName}
 						nestingLvl={nestingLvl}
 						rowName={node.data.rowName}
@@ -105,6 +106,7 @@ export function Row({ node, onCreateNewRow, onAddChildRow, onUpdateRow, onDelete
 			{editMode && (
 				<>
 					<EditableRow
+						qRowsWithLessNesting={qRowsWithLessNesting}
 						linesClassName={linesClassName}
 						nestingLvl={nestingLvl}
 						node={node}
