@@ -1,5 +1,8 @@
 import axios from "axios";
 import { CiwCreateData, CiwUpdateData } from "./ts/ApiData";
+import updateNodeInSessionData from "./lib/updateNodeInSessionData";
+import { TreeNode } from "./ts/TreeNode";
+import deleteNodeInSessionData from "./lib/deleteNodeInSessionData";
 
 /**
  * Fetch data from API
@@ -15,10 +18,10 @@ export const fetchData = async () =>
 /**
  * Create new data in API
  */
-export const createData = async (data: CiwCreateData) =>
+export const createData = async (data: CiwCreateData, nodes: TreeNode[], key: string) =>
 	await axios
 		.post(`${import.meta.env.VITE_APP_PATH}/row/create`, data)
-		.then((res) => console.log(res.data.current))
+		.then((res) => updateNodeInSessionData(nodes, res.data.current, key))
 		.catch((e) => {
 			console.log(e);
 		});
@@ -26,10 +29,10 @@ export const createData = async (data: CiwCreateData) =>
 /**
  * Update current data in API
  */
-export const updateData = async (data: CiwUpdateData) =>
+export const updateData = async (data: CiwUpdateData, nodes: TreeNode[], key: string) =>
 	await axios
 		.post(`${import.meta.env.VITE_APP_PATH}/row/${data.id}/update`, data)
-		.then((res) => res.data.current)
+		.then((res) => updateNodeInSessionData(nodes, res.data.current, key))
 		.catch((e) => {
 			console.log(e);
 		});
@@ -37,10 +40,10 @@ export const updateData = async (data: CiwUpdateData) =>
 /**
  * Delete current data in API
  */
-export const deleteData = async (rowId: number) =>
+export const deleteData = async (rowId: number, nodes: TreeNode[]) =>
 	await axios
 		.delete(`${import.meta.env.VITE_APP_PATH}/row/${rowId}/delete`)
-		.then((res) => res.data)
+		.then(() => deleteNodeInSessionData(nodes, rowId))
 		.catch((e) => {
 			console.log(e);
 		});
