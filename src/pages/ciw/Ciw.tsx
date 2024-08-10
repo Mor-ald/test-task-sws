@@ -2,29 +2,15 @@ import { useCallback, useEffect, useState } from "react";
 import { TreeTable } from "../../components/components";
 import styles from "./Ciw.module.scss";
 import { createData, deleteData, fetchData, updateData } from "../../GlobalApi";
-import { ApiCiwData, CiwCreateData, CiwUpdateData } from "../../ts/ApiData";
+import { CiwCreateData, CiwUpdateData } from "../../ts/ApiData";
 import { TreeNode } from "../../ts/TreeNode";
+import convertToNodes from "../../lib/convertToNodes";
 
 /**
  * Page of construction and installation works
  */
 export default function Ciw() {
 	const [nodes, setNodes] = useState<TreeNode[]>([]);
-
-	const convertToNodes = useCallback((data: ApiCiwData, parentKey: string | null = null, parentId: number | null = null): TreeNode[] => {
-		return data.map((item, index) => {
-			const key = parentKey ? `${parentKey}-${index}` : index.toString();
-			const node: TreeNode = {
-				key,
-				editMode: false,
-				parentId: parentId,
-				data: { ...item },
-				children: item.child.length > 0 ? convertToNodes(item.child, key, item.id) : [],
-			};
-
-			return node;
-		});
-	}, []);
 
 	const loadData = useCallback(async () => {
 		const data = await fetchData();
