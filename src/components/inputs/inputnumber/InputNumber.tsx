@@ -1,18 +1,12 @@
 import { useCallback } from "react";
 import styles from "../Inputs.module.scss";
 import { IInputNumber } from "./InputNumber.types";
+import convertToStringNumberWithSpaces from "../../../lib/convertToStringNumberWithSpaces";
 
 /**
  * InputNumber component
  */
 export default function InputNumber({ field, formData, onChangeFormData, onPressEnter }: IInputNumber) {
-	const convertToStringNumberWithSpaces = (number: string): string => {
-		const parts = number.split(",");
-		parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-		return parts.join(",");
-	};
-
 	const clearNumber = useCallback(
 		(e: React.KeyboardEvent<HTMLInputElement>) => {
 			const target = e.target as HTMLInputElement;
