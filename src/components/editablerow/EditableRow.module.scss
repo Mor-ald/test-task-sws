@@ -4,6 +4,10 @@
 	transition: all 0.2s ease;
 }
 
+.row > td {
+	padding: 12px;
+}
+
 .row:hover {
 	background-color: var(--surface-ground);
 }
@@ -15,6 +19,15 @@
 .lines,
 .lines-long {
 	position: relative;
+}
+.vertical-add-line-container {
+	position: relative;
+}
+
+.vertical-add-line {
+	position: absolute;
+	width: 1px;
+	background-color: var(--surface-line);
 }
 
 .lines::before,
